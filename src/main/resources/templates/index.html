@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- META SECTION -->
+<title>Services</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- END META SECTION -->
+<!--  BEGIN STYLE -->
+<style>
+table, th, td {
+    border: 1px solid black;
+    padding: 1px;
+}
+</style>
+<!--  END STYLE -->
+
+</head>
+<body>
+		<div>
+			<h2>Current Services</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Descritption</th>
+						<th>Version</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="persons : ${persons}">
+						<td th:text="${persons.id}">Text ...</td>
+						<td th:text="${persons.name}">Text ...</td>
+						<td th:text="${persons.description}">Text ...</td>
+						<td th:text="${persons.version}">Text...</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+</body>
+</html>

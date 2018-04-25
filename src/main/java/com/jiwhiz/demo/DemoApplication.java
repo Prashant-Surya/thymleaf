@@ -15,57 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class DemoApplication {
-    @Autowired
-    private PersonRepository repository;
-
-    @RequestMapping("/")
-    public String home() {
-        Person p = this.repository.findAll().iterator().next();
-        return "Hello " + p.getName() + "!";
-    }
-
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Throwable {
         SpringApplication.run(DemoApplication.class, args);
-    }
-}
-
-@Repository
-interface PersonRepository extends CrudRepository<Person, Long> {
-
-}
-
-@Entity
-class Person {
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String firstName;
-    private String lastName;
-
-    public String getFirstName() {
-        return this.firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public void setLastName(String lastname) {
-        this.lastName = lastname;
-    }
-
-    @Override
-    public String toString() {
-        return "Person [firstName=" + this.firstName + ", lastName=" + this.lastName
-                + "]";
-    }
-    
-    public String getName() {
-        return this.firstName + " " + this.lastName;
     }
 }
 

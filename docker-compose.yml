@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  demo-mysql:
+    container_name: demo-mysql
+    image: eventuateio/eventuateio-local-mysql:0.18.0.RELEASE
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_USER=mysqluser
+      - MYSQL_PASSWORD=mysqlpw
+    ports:
+      - "3306:3306"
+
+
