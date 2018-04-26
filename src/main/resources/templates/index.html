@@ -30,11 +30,11 @@ table, th, td {
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="persons : ${persons}">
-						<td th:text="${persons.id}">Text ...</td>
-						<td th:text="${persons.name}">Text ...</td>
-						<td th:text="${persons.description}">Text ...</td>
-						<td th:text="${persons.version}">Text...</td>
+					<tr th:each="person : ${persons}">
+					        <td th:text="${person.id}">  ----- </td> 
+						<td th:text="${person.name}"> ----- </td>
+						<td th:text="${person.description}"> -----  </td>
+						<td th:text="${person.version}"> ----  </td>
 					</tr>
 				</tbody>
 			</table>
