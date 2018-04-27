@@ -39,5 +39,14 @@ table, th, td {
 				</tbody>
 			</table>
 		</div>
+ <div>
+ <h2>Add A Service</h2>
+ <form action="#" th:action="@{/}" method="post">
+ <label>Name<input type="text" name="name" id="name"></input></label>
+ <label>Description<input type="text" name="description" id="description"></input></label>
+ <label>Version<input type="text" name="version" id="version"></input></label>
+ <input type="submit" value="Submit"></input>
+ </form>
+ </div>
 </body>
 </html>
