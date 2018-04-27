@@ -9,16 +9,28 @@
 <!-- END META SECTION -->
 <!--  BEGIN STYLE -->
 <style>
+body {
+    background-color: #eaeae1;
+}
+
 table, th, td {
-    border: 1px solid black;
-    padding: 1px;
+    border: 3px solid black;
+    padding: 7px;
+    margin-left: 33%;
+}
+.centershow {
+    text-align: center;
+}
+.centeradd {
+    text-align: center;
+    padding-top: 3%;
 }
 </style>
 <!--  END STYLE -->
 
 </head>
 <body>
-		<div>
+		<div class="centershow">
 			<h2>Current Services</h2>
 			<table>
 				<thead>
@@ -39,14 +51,14 @@ table, th, td {
 				</tbody>
 			</table>
 		</div>
- <div>
- <h2>Add A Service</h2>
- <form action="#" th:action="@{/}" method="post">
- <label>Name<input type="text" name="name" id="name"></input></label>
- <label>Description<input type="text" name="description" id="description"></input></label>
- <label>Version<input type="text" name="version" id="version"></input></label>
- <input type="submit" value="Submit"></input>
- </form>
- </div>
+		<div class="centeradd">
+ 				<h2>Add A Service</h2>
+ 				<form action="#" th:action="@{/}" method="post">
+ 					<label>Name<input type="text" name="name" id="name"></input></label>
+ 					<label>Description<input type="text" name="description" id="description"></input></label>
+ 					<label>Version<input type="text" name="version" id="version"></input></label><br/><br/>
+ 					<input type="submit" value="Submit"></input>
+ 				</form>
+ 		</div>
 </body>
 </html>
