@@ -26,6 +26,7 @@ public class DemoController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model md){
         md.addAttribute("persons", service.findAll());
+        md.addAttribute("versions",service.findAllVersion());
 
         return "index";
     }

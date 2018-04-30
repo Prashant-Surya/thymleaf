@@ -14,6 +14,7 @@ public interface DemoService {
                 
 	       	void addService(String name, String description, String version);
 		List<Demo> findAll();
+                List<Demo> findAllVersion();
 	
 }
 

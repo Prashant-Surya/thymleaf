@@ -51,6 +51,36 @@ table, th, td {
 				</tbody>
 			</table>
 		</div>
+                
+		<div class="centershow">
+			<h2>Current Versions</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Service_ID</th>
+						<th>Version_ID</th>
+						<th>Status</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="version : ${versions}">
+					        <td th:text="${version.service_id}">  ----- </td> 
+						<td th:text="${version.version_id}"> ----- </td>
+						<td th:text="${version.version_status}"> -----  </td>
+						<td th:text="${version.version_started}"> ----  </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+                
+
+
+
+
+
+
+
 		<div class="centeradd">
  				<h2>Add A Service</h2>
  				<form action="#" th:action="@{/}" method="post">

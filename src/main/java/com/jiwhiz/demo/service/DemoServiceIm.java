@@ -53,12 +53,31 @@ public class DemoServiceIm implements DemoService {
                         resultSet.getString("name"),
                         resultSet.getString("description"),
                         resultSet.getString("version"));
+                        
 
                 return user;
             }
         };
 
         return template.query(sql, rm);
+ } 
+
+
+    public List<Demo> findAllVersion() {
+        String sql1 = "select * from version";
+        RowMapper<Demo> rm = new RowMapper<Demo>() {
+            @Override
+            public Demo mapRow(ResultSet resultSet, int i) throws SQLException {
+                Demo user1 = new Demo(resultSet.getInt("service_id"),
+                        resultSet.getString("version_id"),
+                        resultSet.getString("version_status"),
+                        resultSet.getDate("version_started"));
+
+                return user1;
+            }
+        };
+
+        return template.query(sql1, rm);
  }                                                                            
 
 }
