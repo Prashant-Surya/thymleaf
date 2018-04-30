@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Date;
 
 
 @Controller
@@ -32,13 +33,22 @@ public class DemoController {
     }
     
           @PostMapping(value = "/")
-        public String addservice(@RequestParam("name") String name,
-                        @RequestParam("description") String description,
-                        @RequestParam("version") String version, Model model) {
+
+        public String addservice(@RequestParam(required=false,name="name") String name,
+                        @RequestParam(required=false,name="description") String description,
+                        @RequestParam(required=false,name="version") String version, Model model) {
                 service.addService(name, description, version);
                 System.out.println("name = " + name + ",description = " + description + ", version = " + version);
                 return "redirect:/";
         }
-
+          @PostMapping(value = "/hi")
+        public String addversion(@RequestParam("service_id") String service_id,
+                        @RequestParam("version_id") String version_id,
+                        @RequestParam("version_status") String version_status,
+                        @RequestParam("version_started") String version_started, Model model) {
+                service.addVersion(service_id, version_id, version_status, version_started);
+                System.out.println("service_id = " + service_id + ",version_id = " + version_id + ", version_status = " + version_status + ", version_started = " + version_started);
+                return "redirect:/";
+        }
 
 }

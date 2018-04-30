@@ -1,9 +1,9 @@
 
 CREATE TABLE IF NOT EXISTS person (
   id INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(50) NOT NULL,
-  description VARCHAR(100) NOT NULL,
-  version VARCHAR(10) NOT NULL,
+  name VARCHAR(50),
+  description VARCHAR(100) ,
+  version VARCHAR(10),
   PRIMARY KEY (id));
 
 CREATE TABLE IF NOT EXISTS version (

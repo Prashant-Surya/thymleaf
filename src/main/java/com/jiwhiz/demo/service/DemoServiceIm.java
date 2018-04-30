@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import javax.sql.DataSource;
-
+import java.util.Date;
 import com.jiwhiz.demo.model.Demo;
 
 import org.springframework.jdbc.core.RowMapper;
@@ -42,6 +42,13 @@ public class DemoServiceIm implements DemoService {
 		
 	}
 
+           	public void addVersion(String service_id, String version_id, String version_status, String version_started){
+		
+		//JdbcTemplate template = new JdbcTemplate(dataSource);
+		template.update("INSERT INTO version(service_id,version_id,version_status,version_started)VALUES(?,?,?,?)",service_id,version_id,version_status,version_started);
+		
+	}
+
 
 	
     public List<Demo> findAll() {
@@ -64,7 +71,7 @@ public class DemoServiceIm implements DemoService {
 
 
     public List<Demo> findAllVersion() {
-        String sql1 = "select * from version";
+        String sql1 = "select * from version order by version_started ASC";
         RowMapper<Demo> rm = new RowMapper<Demo>() {
             @Override
             public Demo mapRow(ResultSet resultSet, int i) throws SQLException {

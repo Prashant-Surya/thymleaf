@@ -5,7 +5,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 import com.jiwhiz.demo.model.Demo;
-
+import java.util.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -13,6 +13,7 @@ import java.util.List;
 public interface DemoService {
                 
 	       	void addService(String name, String description, String version);
+                void addVersion(String service_id, String version_id, String version_status, String version_started);
 		List<Demo> findAll();
                 List<Demo> findAllVersion();
 	
