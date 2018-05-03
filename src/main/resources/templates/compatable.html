@@ -30,16 +30,25 @@ table, th, td {
 <div class="centershow1">
 	<h2>Compatability status</h2>
                       <center>
-			<table>
-                                
+<table>
 				<thead>
 					<tr>
-						<th>Service 2</th>
-						<th>Service 3</th>
-						<th>Service 4</th>
-						
+						<th>Service1_Name</th>
+						<th>Service1_Version</th>
+						<th>Service2_Name</th>
+						<th>Service2_Version</th>
+						<th>Compatable</th>
 					</tr>
 				</thead>
+				<tbody>
+					<tr th:each="compatable : ${compatables}">
+					        <td th:text="${compatable.service1_name}">  ----- </td> 
+						<td th:text="${compatable.service1_version}"> ----- </td>
+						<td th:text="${compatable.service2_name}"> -----  </td>
+						<td th:text="${compatable.service2_version}"> ----  </td>
+						<td th:text="${compatable.compatable}"> ----  </td>
+					</tr>
+				</tbody>
 			</table>	
 </center>
 </div>

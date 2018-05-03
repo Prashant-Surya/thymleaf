@@ -48,6 +48,11 @@ public class DemoServiceIm implements DemoService {
 		template.update("INSERT INTO version(service_id,version_id,version_status,version_started)VALUES(?,?,?,?)",service_id,version_id,version_status,version_started);
 		
 	}
+               
+                public void addCompat(String service1_name,String service1_version,String service2_name,String service2_version,String compatable){
+		template.update("INSERT INTO compatability(service1_name,service1_version,service2_name,service2_version,compatable)VALUES(?,?,?,?,?)",service1_name,service1_version,service2_name,service2_version,compatable);
+
+        }
 
 
 	
@@ -86,6 +91,26 @@ public class DemoServiceIm implements DemoService {
 
         return template.query(sql1, rm);
  }                                                                            
+
+
+    public List<Demo> findCompat() {
+        String sqlcompat = "select * from compatability";
+        RowMapper<Demo> rm = new RowMapper<Demo>() {
+            @Override
+            public Demo mapRow(ResultSet resultSet, int i) throws SQLException {
+                Demo compat = new Demo(resultSet.getInt("compat_id"),
+                        resultSet.getString("service1_name"),
+                        resultSet.getString("service1_version"),
+                        resultSet.getString("service2_name"),
+                        resultSet.getString("service2_version"),
+                        resultSet.getString("compatable"));
+
+                return compat;
+            }
+        };
+
+        return template.query(sqlcompat, rm);
+ } 
 
 }
 

@@ -51,9 +51,19 @@ public class DemoController {
                 System.out.println("service_id = " + service_id + ",version_id = " + version_id + ", version_status = " + version_status + ", version_started = " + version_started);
                 return "redirect:/";
         }
-
+          @PostMapping(value = "/compat")
+        public String addcompat(@RequestParam("service1_name") String service1_name,
+                        @RequestParam("service1_version") String service1_version,
+                        @RequestParam("service2_name") String service2_name,
+                        @RequestParam("service2_version") String service2_version, 
+                        @RequestParam("compatable") String compatable, Model model) {
+                service.addCompat(service1_name, service1_version, service2_name, service2_version,compatable);
+                System.out.println("service1_name = " + service1_name + ",service1_version = " + service1_version + ", service2_name = " + service2_name + ", service2_version = " + service2_version + "compatable = " + compatable);
+                return "redirect:/";
+        }
          @GetMapping("/compatable")
-    public String compat() {
+    public String compat(Model md) {
+                md.addAttribute("compatables", service.findCompat());
                 return "compatable";
     }
 

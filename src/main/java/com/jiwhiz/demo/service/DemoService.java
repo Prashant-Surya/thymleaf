@@ -14,8 +14,10 @@ public interface DemoService {
                 
 	       	void addService(String name, String description, String version);
                 void addVersion(String service_id, String version_id, String version_status, String version_started);
+                void addCompat(String service1_name,String service1_version,String service2_name,String service2_version,String compatable);
 		List<Demo> findAll();
                 List<Demo> findAllVersion();
+                List<Demo> findCompat();
 	
 }
 

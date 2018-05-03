@@ -123,6 +123,21 @@ table, th, td {
  		</div> 
 
 </div>
+
+		 <div class="centeradd">
+ 				<h2>Set Compatability</h2>
+ 				<form action="#" th:action="@{/compat}" method="post">
+ 					<label>Service1_Name<input type="text" name="service1_name" id="service1_name"></input></label><br/>
+ 					<label>Service1_Version<input type="text" name="service1_version" id="service1_version"></input></label><br/>
+ 					<label>Service2_Name<input type="text" name="service2_name" id="service2_name"></input></label><br/>
+ 					<label>Service2_Version<input type="text" name="service2_version" id="service2_version"></input></label><br/>
+ 					<label>Compatability<input type="text" name="compatable" id="compatable"></input></label><br/><br/>
+ 					<input type="submit" value="Submit"></input>
+                                </form>
+ 		</div>
+
+
+
 		 <div class="centeradd">
  				<form action="#" th:action="@{/compatable}" method="get">
  			        <input type="submit" value="compatabilty table"></input>

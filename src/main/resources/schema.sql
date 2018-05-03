@@ -13,3 +13,13 @@ CREATE TABLE IF NOT EXISTS version (
   version_started DATE NOT NULL,
   FOREIGN KEY (service_id) REFERENCES person(id),
   PRIMARY KEY (version_id , service_id));
+
+
+CREATE TABLE IF NOT EXISTS compatability (
+  compat_id INT NOT NULL AUTO_INCREMENT,
+  service1_name VARCHAR(50) NOT NULL,
+  service1_version VARCHAR(10) NOT NULL ,
+  service2_name VARCHAR(50) NOT NULL,
+  service2_version VARCHAR(10) NOT NULL ,
+  compatable VARCHAR(10) NOT NULL,
+  PRIMARY KEY (compat_id));
