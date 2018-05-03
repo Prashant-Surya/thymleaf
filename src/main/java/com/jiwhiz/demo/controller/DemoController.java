@@ -41,6 +41,7 @@ public class DemoController {
                 System.out.println("name = " + name + ",description = " + description + ", version = " + version);
                 return "redirect:/";
         }
+
           @PostMapping(value = "/hi")
         public String addversion(@RequestParam("service_id") String service_id,
                         @RequestParam("version_id") String version_id,
@@ -50,5 +51,10 @@ public class DemoController {
                 System.out.println("service_id = " + service_id + ",version_id = " + version_id + ", version_status = " + version_status + ", version_started = " + version_started);
                 return "redirect:/";
         }
+
+         @GetMapping("/compatable")
+    public String compat() {
+                return "compatable";
+    }
 
 }
