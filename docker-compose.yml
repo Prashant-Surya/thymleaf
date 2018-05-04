@@ -4,6 +4,6 @@ services:
   demo-app:
     build: ./src/main/docker
     ports:
-      - "8888:8088"
+      - "8889:8088"
 
 
