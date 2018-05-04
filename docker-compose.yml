@@ -1,14 +1,9 @@
 version: '3'
 
 services:
-  demo-mysql:
-    container_name: demo-mysql
-    image: eventuateio/eventuateio-local-mysql:0.18.0.RELEASE
-    environment:
-      - MYSQL_ROOT_PASSWORD=rootpassword
-      - MYSQL_USER=mysqluser
-      - MYSQL_PASSWORD=mysqlpw
+  demo-app:
+    build: ./src/main/docker
     ports:
-      - "3306:3306"
+      - "8888:8088"
 
 
