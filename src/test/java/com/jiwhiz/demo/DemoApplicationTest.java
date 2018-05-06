@@ -1,4 +1,4 @@
-package com.jiwhiz.demno;
+package com.jiwhiz.demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
